@@ -84,7 +84,7 @@
 
 
 
-    "Error-Codes": {
+     "Error-Codes": {
       "type": "array",
       "items": {
         "type": "object",
@@ -93,106 +93,80 @@
             "type": "string",
             "description": "Please enter the valid ID"
           },
-  
-          "log":{
-             "type":"object",
-             "properties":
-             {
-              "Messages":{
-                "type":  "string",
+
+          "log": {
+            "type": "object",
+            "properties": {
+              "Messages": {
+                "type": "string",
                 "description": "Please enter the valid message"
               },
-              "Severity":{
-                "type":  "string",
+              "Severity": {
+                "type": "string",
                 "description": "Please enter the valid input",
-                "enum":["High","Medium","Low"]
+                "enum": ["High", "Medium", "Low"]
               },
-              "Arguments":{
-                "type":"object",
-                "properties":
-                {
-                 "Name":{
-                   "type":  "string",
-                   "description": "Please enter the name"
-  
-                 },
-                 "Description":{
-                   "type":  "string",
-                   "description": "Please enter the description"
-              
-                 },
-                 "Resolution":{
-        "type": "object",
-        "properties": {
-          "Description": {
-            "type": "string",
-            "description": "Please enter the description"
-          },
-              "Owner":{
-                "type":  "string",
-                "description": "Please enter the valid input"
-              },
-              "SelfHealing":{
-                "type":  "string",
-                "description": "Please enter the valid input"
-              }  
-  
-          }
-        
-        },
-
-
-        "References":{
-          "type": "object",
-          "properties": {
-                "link":{
-                  "type":  "string",
-                  "description": "Please enter the valid input"
+              "Arguments": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string",
+                    "description": "Please enter the name"
+                  },
+                  "Description": {
+                    "type": "string",
+                    "description": "Please enter the description"
+                  }
                 }
-               
+              }
             }
-          
+          },
+          "Resolution": {
+            "type": "object",
+            "properties": {
+              "Description": {
+                "type": "string",
+                "description": "Please enter the description"
+              },
+              "Owner": {
+                "type": "string",
+                "description": "Please enter the valid input"
+              },
+              "SelfHealing": {
+                "type": "string",
+                "description": "Please enter the valid input"
+              }
+            }
           },
 
-        
-
-      "ReturnCodes":{
-        "type": "object",
-        "properties": {
-          "HTTP": {
-            "type": "string",
-            "description": "Please enter the valid input"
+          "References": {
+            "type": "object",
+            "properties": {
+              "link": {
+                "type": "string",
+                "description": "Please enter the valid input"
+              }
+            }
           },
-          "Console":{
+
+          "ReturnCodes": {
+            "type": "object",
+            "properties": {
+              "HTTP": {
+                "type": "string",
+                "description": "Please enter the valid input"
+              },
+              "Console": {
                 "type": "integer",
                 "description": "Please enter the valid input",
                 "maximum": 100000000,
                 "minimum": 1
               }
-              
-          },
-          "required": [
-        
-          ]
-        
-        }
-                 
-                }
-             }
-            }
-           
+            },
+            "required": []
           }
-        
-        }  
+        }
       }
     }
-
-
-        
-
-    }
-
-    
-    
   }
-
+}
