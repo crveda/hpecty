@@ -58,18 +58,21 @@
       flex-grow: 1;
     }
 
-    #root {
-  display: none;
-}
-
     #generatedCodeContainer {
       flex-grow: 1;
       margin: 10px;
       resize: none;
     }
+
+    #root{
+      height: 40px;
+      display: none;
+    }
+
     .hide {
       display: none;
     }
+
   </style>
 </head>
 
@@ -82,11 +85,21 @@
   </div>
   <div class="workspace-container">
     <div id="blocklyDiv"></div>
-    <textarea id="generatedCodeContainer" readonly placeholder="Generated JSON will go here..."></textarea>
+    <textarea id="generatedCodeContainer" readonly placeholder="Generated JSON will go here..."></textarea> 
   </div>
-  <div>
-    <div id="root"></div>
-  </div>
+  <div id="root"></div>
+
+<script>
+  function activateDiv() { 
+  const code = Blockly.JavaScript.workspaceToCode(workspace);
+  const blob = new Blob([code], { type: 'application/json' });
+  console.log(code);
+  // public/index.js
+  sessionStorage.setItem('myData',code);
+  var targetDiv = document.getElementById("root");
+  targetDiv.style.display = "block";
+}
+</script>
 
 </body>
 </html>

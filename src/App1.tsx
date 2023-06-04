@@ -6,10 +6,10 @@ const Abc=()=>{
 return (
   <Router>
     <nav>
-      <NavLink to="jsonforms">App</NavLink>
+      <NavLink to="json">App</NavLink>
     </nav>
     <Routes>
-      <Route path="jsonforms" element={<App/>}/>
+      <Route path="json" element={<App/>}/>
     </Routes>
   </Router>
 );

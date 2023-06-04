@@ -1,5 +1,6 @@
 import { Fragment, useState, useMemo } from 'react';
 import { JsonForms } from '@jsonforms/react';
+import { JSONSchema7 } from 'json-schema';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -14,6 +15,7 @@ import {
 import RatingControl from './RatingControl';
 import ratingControlTester from './ratingControlTester';
 import { makeStyles } from '@mui/styles';
+import fs from 'fs';
 import { Routes ,BrowserRouter as Router, Route} from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -59,6 +61,11 @@ const App = () => {
   const clearData = () => {
     setData({});
   };
+  const myData = sessionStorage.getItem('myData');
+  // const Schema=myData;
+  const Schema = myData ? JSON.parse(myData) : undefined;
+  console.log("HERE IN APP.TSX")
+  console.log(Schema);
 
   return (
     <Fragment>
@@ -98,7 +105,7 @@ const App = () => {
           </Typography>
           <div className={classes.demoform}>
             <JsonForms
-              schema={schema}
+              schema={Schema}
               uischema={uischema}
               data={data}
               renderers={renderers}
