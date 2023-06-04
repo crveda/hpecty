@@ -14,6 +14,7 @@ import {
 import RatingControl from './RatingControl';
 import ratingControlTester from './ratingControlTester';
 import { makeStyles } from '@mui/styles';
+import { Routes ,BrowserRouter as Router, Route} from 'react-router-dom';
 
 const useStyles = makeStyles({
   container: {
@@ -55,7 +56,6 @@ const App = () => {
   const classes = useStyles();
   const [data, setData] = useState<any>(initialData);
   const stringifiedData = useMemo(() => JSON.stringify(data, null, 2), [data]);
-
   const clearData = () => {
     setData({});
   };
